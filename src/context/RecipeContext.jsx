@@ -9,7 +9,7 @@ const RecipeContext = ({ children }) => {
   function addRecipe(newRecipe) {
     postData(newRecipe).then((data) => {
       setRecipes((prev) => {
-        [...prev, data];
+        return [...prev, data];
       });
     });
   }
