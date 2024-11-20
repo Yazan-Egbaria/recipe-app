@@ -1,9 +1,11 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
+import { RecipeContextProvider } from "../context/RecipeContext";
 
-export default function AddRecipeForm({ addRecipe }) {
+export default function AddRecipeForm() {
   const [recipeName, setRecipeName] = useState("");
   const [recipeInstructions, setRecipeInstructions] = useState("");
   const [recipeCategory, setRecipeCategory] = useState("Lunch");
+  const { addRecipe } = useContext(RecipeContextProvider);
 
   function handleSubmit(e) {
     e.preventDefault();
